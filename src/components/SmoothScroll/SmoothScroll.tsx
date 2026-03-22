@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 
 import Lenis from 'lenis'
 
+import { ScrollTrigger } from '@shared/lib/gsap'
+
 export const SmoothScroll = () => {
   useEffect(() => {
     const lenis = new Lenis({
@@ -15,6 +17,12 @@ export const SmoothScroll = () => {
     }
 
     requestAnimationFrame(raf)
+
+    lenis.on('scroll', ScrollTrigger.update)
+
+    return () => {
+      lenis.destroy()
+    }
   }, [])
 
   return null

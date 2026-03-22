@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 
 import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
+
+import { gsap } from '@shared/lib/gsap'
 
 export const CompanyName = ({ title, subtitle }: { title: string; subtitle: string }) => {
   const titleRef = useRef(null)

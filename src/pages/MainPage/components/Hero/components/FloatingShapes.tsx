@@ -1,32 +1,25 @@
 import { useRef } from 'react'
 
 import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
+
+import { gsap } from '@shared/lib/gsap'
 
 export const FloatingShapes = () => {
   const container = useRef(null)
 
   useGSAP(
     () => {
-      gsap
-        .timeline({ repeat: -1 })
-        .to('.shape1', { rotate: 360, y: -30, duration: 7.5, ease: 'none' })
-        .to('.shape1', { y: 0, duration: 7.5, ease: 'none' })
+      gsap.to('.shape1', { rotate: 360, y: -30, duration: 7.5, ease: 'none', repeat: -1 })
+      gsap.to('.shape1', { y: 0, duration: 7.5, ease: 'none', repeat: -1 })
 
-      gsap
-        .timeline({ repeat: -1 })
-        .to('.shape2', { scale: 1.3, x: 20, duration: 5, ease: 'power1.inOut' })
-        .to('.shape2', { scale: 1, x: 0, duration: 5, ease: 'power1.inOut' })
+      gsap.to('.shape2', { scale: 1.3, x: 20, duration: 5, ease: 'power1.inOut', repeat: -1 })
+      gsap.to('.shape2', { scale: 1, x: 0, duration: 5, ease: 'power1.inOut', repeat: -1 })
 
-      gsap
-        .timeline({ repeat: -1 })
-        .to('.shape3', { rotate: 405, y: 40, duration: 6, ease: 'none' })
-        .to('.shape3', { y: 0, duration: 6, ease: 'none' })
+      gsap.to('.shape3', { rotate: 405, y: 40, duration: 6, ease: 'none', repeat: -1 })
+      gsap.to('.shape3', { y: 0, duration: 6, ease: 'none', repeat: -1 })
 
-      gsap
-        .timeline({ repeat: -1 })
-        .to('.light', { scale: 1.2, opacity: 0.4, duration: 3, ease: 'power1.inOut' })
-        .to('.light', { scale: 1, opacity: 0.2, duration: 3, ease: 'power1.inOut' })
+      gsap.to('.light', { scale: 1.2, opacity: 0.4, duration: 3, ease: 'power1.inOut', repeat: -1 })
+      gsap.to('.light', { scale: 1, opacity: 0.2, duration: 3, ease: 'power1.inOut', repeat: -1 })
     },
     { scope: container },
   )
