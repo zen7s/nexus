@@ -14,10 +14,11 @@ export const Services = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
-          start: 'top top',
-          end: '+=500',
+          start: '-=400 top',
+          end: '+=250',
           scrub: true,
-          pin: true,
+          // markers: true,
+          // pin: true,
         },
       })
 
